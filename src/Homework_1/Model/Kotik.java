@@ -97,7 +97,7 @@ public Kotik() {
         if (hungryIndicator <= 0) {
             System.out.println("Котик голоден!Покорми меня, прежде чем гладить!");
         } else {
-            System.out.println("Котик сыт, его надо погладить");
+            System.out.println("Котик сыт, его надо погладить.");
             hungryIndicator--;
         }
     }
@@ -105,7 +105,10 @@ public Kotik() {
             Random random = new Random();
             for (int i = 1; i <= 24; i++) {
                 int catToDo = random.nextInt(4) + 1;
-                switch (catToDo) {
+                if (hungryIndicator <= 0) {
+                    eat();
+                    hungryIndicator = Math.min(hungryIndicator + 3, 5);
+                } else {switch (catToDo) {
                     case 1:
                         play();
                         break;
@@ -119,11 +122,9 @@ public Kotik() {
                         needScratch();
                         break;
                 }
-                if (hungryIndicator <= 0) {
-                    eat();
-                    hungryIndicator = Math.min(hungryIndicator + 3, 5);
-                               }
-                System.out.println("В " + i + " час(а) котик: " + (hungryIndicator > 0 ? "сыт и весело проводит время" : "голоден и просит есть"));
+                }
+
+
 
 
             }
