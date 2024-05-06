@@ -11,8 +11,12 @@ public class Zoo {
         Crocodile crocodile = new Crocodile();
         Woker ivan = new Woker();
 
-        Meat meat = new Meat();
-        Grass grass = new Grass();
+        Food beef = new Beef("мясо говядины");
+        Food chiken = new Chiken("мясо курицы.");
+        Food pork = new Pork("мясо свиньи.");
+        Food hay = new Hay("сено.");
+        Food freshGrass = new FreshGrass("свежую траву.");
+        Food foliage = new Foliage("листву.");
 
         Pond pond = new Pond();
 
@@ -46,26 +50,26 @@ public class Zoo {
 
         System.out.println("\nПришел работник Иван и начал всех животных кормить и тренировать команду голос.Сначала медведя:");
         ivan.getVoice(bear);
-        ivan.feed(bear, meat);
+        ivan.feed(bear, beef);
 
         System.out.println("\nПотом крокодила:");
         ivan.getVoice(crocodile);
-        ivan.feed(crocodile, grass);
+        ivan.feed(crocodile, hay);
 
         System.out.println("\nПотом льва:");
         ivan.getVoice(lion);
-        ivan.feed(lion, meat);
+        ivan.feed(lion, pork);
 
         System.out.println("\nПотом утку:");
         ivan.getVoice(duck);
-        ivan.feed(duck, grass);
+        ivan.feed(duck, freshGrass);
 
         System.out.println("\nПотом сома:");
-        ivan.feed(som, meat);
+        ivan.feed(som, chiken);
 
         System.out.println("\nПотом слона:");
         ivan.getVoice(elephant);
-        ivan.feed(elephant, grass);
+        ivan.feed(elephant, foliage);
 
         System.out.println("\nТем временем в пруду:");
         pond.animalsSwimPond();

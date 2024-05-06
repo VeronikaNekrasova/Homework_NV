@@ -22,27 +22,20 @@ public class Duck extends Herbivore implements Fly, Voice, Swim {
 
     @Override
     public void eat(Food food) {
-        String herbivoreFood = "Утка ест овощи и фрукты.";
-        String grass = "Утка ест зерно";
-        super.eat(food);
-        boolean isEat = food instanceof Grass;
-        if (isEat) {
-            int eatToday = (int) (Math.random() * 2);
-            switch (eatToday) {
-                case 0:
-                    System.out.println(herbivoreFood);
-                    break;
-                case 1:
-                    System.out.println(grass);
-                    break;
-            }
+        if (food instanceof FreshGrass) {
+            System.out.println("Утка ест свежую траву.");
+        } else if (food instanceof Hay) {
+            System.out.println("Утка ест сено.");
+        } else if (food instanceof Foliage) {
+            System.out.println("Утка ест листву деревьев.");
         } else {
-            System.out.println("Утка не хищное животное.");
+            System.out.println("Утка не хищное животное!");
         }
-
     }
 
-
 }
+
+
+
 
 

@@ -22,24 +22,20 @@ public class Crocodile extends Carnivorous implements Run, Swim, Voice {
     }
 
     public void eat(Food food) {
-        String meatMammals = "Крокоди ест мясо зебры ";
-        String meatFish = "Крокодил ест мясо рыбы.";
-        super.eat(food);
-        boolean isEat = food instanceof Meat;
-        if (isEat) {
-            int eatToday = (int) (Math.random() * 2);
-            switch (eatToday) {
-                case 0:
-                    System.out.println(meatMammals);
-                    break;
-                case 1:
-                    System.out.println(meatFish);
-                    break;
-            }
+        if (food instanceof Pork) {
+            System.out.println("Крокодил ест свинину.");
+        } else if (food instanceof Chiken) {
+            System.out.println("Крокодил ест курицу.");
+        } else if (food instanceof Beef) {
+            System.out.println("Крокодил ест говядину.");
         } else {
-            System.out.println("Лев не травоядное животное!");
+            System.out.println("Крокодил не травоядное животное!");
+
+
         }
 
     }
 }
+
+
 

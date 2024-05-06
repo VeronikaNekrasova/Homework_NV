@@ -20,24 +20,17 @@ public class Elephant extends Herbivore implements Run, Swim, Voice {
         return "ВвввввЫЫЫввв";
     }
 
+    @Override
     public void eat(Food food) {
-        String herbivoreFood = "Слон ест фрукты.";
-        String grass = "Слон ест листья";
-        super.eat(food);
-        boolean isEat = food instanceof Grass;
-        if (isEat) {
-            int eatToday = (int) (Math.random() * 2);
-            switch (eatToday) {
-                case 0:
-                    System.out.println(herbivoreFood);
-                    break;
-                case 1:
-                    System.out.println(grass);
-                    break;
-            }
+        if (food instanceof FreshGrass) {
+            System.out.println("Слон ест свежую траву.");
+        } else if (food instanceof Hay) {
+            System.out.println("Слон ест сено.");
+        } else if (food instanceof Foliage) {
+            System.out.println("Слон ест листву деревьев.");
         } else {
-            System.out.println("Слон не хищное животное.");
+            System.out.println("Слон не хищное животное!");
         }
-
     }
 }
+

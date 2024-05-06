@@ -21,25 +21,18 @@ public class Lion extends Carnivorous implements Run, Swim, Voice {
         return "РрррррРрррр";
     }
 
+    @Override
     public void eat(Food food) {
-        String meatMammals = "Лев ест мясо млекопетающих ";
-        String meatFish = "Лев ест мясо рыбы.";
-        super.eat(food);
-        boolean isEat = food instanceof Meat;
-        if (isEat) {
-            int eatToday = (int) (Math.random() * 2);
-            switch (eatToday) {
-                case 0:
-                    System.out.println(meatMammals);
-                    break;
-                case 1:
-                    System.out.println(meatFish);
-                    break;
-            }
+        if (food instanceof Pork) {
+            System.out.println("Лев ест свинину.");
+        } else if (food instanceof Chiken) {
+            System.out.println("Лев ест курицу.");
+        } else if (food instanceof Beef) {
+            System.out.println("Лев ест говядину.");
         } else {
             System.out.println("Лев не травоядное животное!");
         }
-
     }
 }
+
 

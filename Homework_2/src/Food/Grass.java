@@ -1,4 +1,5 @@
 package Food;
 
-public class Grass extends Food {
+public interface Grass {
+    void eat();
 }
